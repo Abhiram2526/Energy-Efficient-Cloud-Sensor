@@ -123,6 +123,8 @@ public class Test1 {
 			break;
 		}
 	}
+	
+
 
 		public static void sensor(int k) {
 			System.out.println("Temp from ANN");
