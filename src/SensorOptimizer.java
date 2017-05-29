@@ -1,20 +1,36 @@
-/** 
-* Test.java
-*/
+/* Energy Effcient Cloud Sensor - Main.java
+ *
+ * This application provides user an interface to interact with  
+ * the tempreture predicted by the ANN.
+ *
+ * Copyright (C) 2017 
+ *
+ * Author(s): Abhiram T <abhiram.t@suiit.ac.in>  
+ *			  Batakrishna Sahu <batakrishna.sahu@suiit.ac.in>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ */
+
+
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 import java.security.SecureRandom;
-public class Test1 {
+
+
+public class SensorOptimizer {
 	public static int taskNum;
 	public static void  main(String[]  args) {
 		Scanner input = new Scanner(System.in);
 		SecureRandom random = new SecureRandom();
 		
-		System.out.println("\n\n Which Type of request do you have   ?");
-		System.out.println("\n1) PERIODIC REQUEST\n2) TIME REQUEST\n3) EVENT REQUEST");
+		System.out.print("Enter Request Type : ");
+		System.out.println("1) PERIODIC REQUEST\n2) TIME REQUEST\n3) EVENT REQUEST");
 		int choice = input.nextInt();
-        System.out.println( "Enter the num of Tasks :" );
+        System.out.println("Enter the num of Tasks :" );
         taskNum = input.nextInt();
 
 		switch(choice) {
@@ -38,9 +54,9 @@ public class Test1 {
 
 				System.out.printf("Base Minute : ");
 				baseMinute[i] = input.nextInt();
-				while(baseMinute[i]<=baseMin && baseMinute[i]<=60){
+				while(baseMinute[i] <= baseMin && baseMinute[i] <= 60){
 					
-					System.out.println("Request Time elapzed Plzzz Re-enter =>");
+					System.out.print("Request Time elapsed. Please Re-Enter : ");
 					baseMinute[i] = input.nextInt();
 					
 				}
@@ -102,14 +118,14 @@ public class Test1 {
 			int	high = input.nextInt();
 			System.out.printf("Enter the alert temperature(LOW) : ");
 			int	low = input.nextInt();
-			int i=1;
-			while(i==1){
+			int i = 1;
+			while(i == 1){
 				int answer = random.nextInt((60 - 15) + 1) + 15;
-				if(answer>=high){
+				if(answer >= high){
 					System.out.printf("EVENT ALERT! SCORCHING ("+answer+"'C)\n");
 					break;
 				}
-				else if(answer<=low){
+				else if(answer <= low){
 					System.out.printf("EVENT ALERT! FREEZING ("+answer+"'C)\n");
 					break;
 				}
@@ -124,9 +140,7 @@ public class Test1 {
 		}
 	}
 	
-
-
-		public static void sensor(int k) {
-			System.out.println("Temp from ANN");
-		}
+	public static void sensor(int k) {
+		System.out.println("Temp from ANN");
+	}
 }
